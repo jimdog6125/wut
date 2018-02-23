@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+ <title>
+    The Caves
+  </title>
+</head>
+
+<body>
+ <h1>The Caves</h1>
+ <img src="http://icons.veryicon.com/png/System/iOS%207/Travel%20Cave.png">
+  <script>
+   var button = document.createElement("button");
+button.innerHTML = "Dynamite";
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+button.addEventListener ("click", function() {
+  document.write()
+}); 
+var button = document.createElement("button");
+button.innerHTML = "Fire";
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+button.addEventListener ("click", function() {
+ document.write()
+}); 
+var button = document.createElement("button");
+button.innerHTML = "Pickaxe";
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+button.addEventListener ("click", function() {
+ document.write()
+}); 
+  </script>
+  <script>
+   var Game = function{  Math.floor((Math.random() * 6) + 1);
+   </script>
+ 
+</body>
