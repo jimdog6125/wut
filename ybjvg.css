@@ -6,6 +6,8 @@ body {
   justify-content: center;
   text-align: center;
   font-family: Georgia;
+ background-image: url("https://cdn.movieweb.com/img.news.tops/NElc3sknJyUOot_1_a/Godzilla-Monster-Planet-Poster-Netflix-Animated-Movie.jpg");
+    background-repeat: repeat-x;
 }
 
 nav {
@@ -23,8 +25,4 @@ nav {
 .btn-success, .btn-danger {
   width:200px;
 
-}
-body {
-    background-image: url("https://cdn.movieweb.com/img.news.tops/NElc3sknJyUOot_1_a/Godzilla-Monster-Planet-Poster-Netflix-Animated-Movie.jpg");
-    background-repeat: repeat-x;
 }
