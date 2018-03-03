@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <head>
-  <style>
-    body{background-color: lightgrey;}
-  </style>
+  
   <title>
    Massive Clicker Online(sort of)
   </title>
 </head>
 <body>
- <script>
+ <style>
+  body {
+ background-color: lightgrey;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Georgia;
+ background-image: url("https://cdn.movieweb.com/img.news.tops/NElc3sknJyUOot_1_a/Godzilla-Monster-Planet-Poster-Netflix-Animated-Movie.jpg");
+    background-repeat: repeat-x;
+}
+
+nav {
+  text-align: left;
+}
+.container {
+  padding:5px 30px 30px 30px;
+  margin:30px;
+  border:solid white 1px;
+  border-radius:5px;
+  /*background-color:#e6e6e6;*/
+  text-align:center;
+}
+
+.btn-success, .btn-danger {
+  width:200px;
+
+}
+  </style>
+  <script>
   var clicks = 0; //increment this by one every click
 var auto_clicks = 0; //automatically click once per second
 var cost = 1; //the cost of this should increase exponentially
