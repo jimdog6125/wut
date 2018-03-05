@@ -1,13 +1,23 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="interface.css" />
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115148766-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115148766-1');
+</script>
+
 	</head>
 	<body>
 		<button onclick="kill(1)">Kill A Monster</button>
 		<br />
-		Cookies: <span id="kills">0</span>
+		Kills: <span id="kills">0</span>
 		<br />
-		<button onclick="buySword()">Buy Cursor</button>
+		<button onclick="buySword()">Buy A Sword</button>
 		<br />
 		Cursors: <span id="sword">0</span>
 		<br />
