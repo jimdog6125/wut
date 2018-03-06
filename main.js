@@ -7,10 +7,10 @@ function kill(number){
 
 var swords = 0;
 
-function buySword(){
-    var swordCost = Math.floor(10 * Math.pow(1.1,swords));     //works out the cost of this cursor
+function buyCursor(){
+    var swordCost = Math.floor(10 * Math.pow(1.1,kills));     //works out the cost of this cursor
     if(kills >= swordCost){                                   //checks that the player can afford the cursor
-        kills = kills + 1;                                   //increases number of cursors
+        swords = swords + 1;                                   //increases number of cursors
     	kills = kills - swordCost;                          //removes the cookies spent
         document.getElementById('swords').innerHTML = swords;  //updates the number of cursors for the user
         document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
@@ -24,12 +24,7 @@ window.setInterval(function(){
 	kill(swords);
 	
 }, 1000);
-function save(){
-var save = {
-    kills: kills,
-    swords: swords,
-}
-};
+
 localStorage.setItem("save",JSON.stringify(save));
 function load(){
 var savegame = JSON.parse(localStorage.getItem("save"));
