@@ -33,7 +33,13 @@ function buyMagic(){
     document.getElementById('magicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 window.setInterval(function(){
-	cookieClick(magic);
+	
 	cookieClick(cursors);
 	
 }, 1000);
+window.setInterval(function(){
+	
+	cookieClick(magic);
+
+}, 100);
+
