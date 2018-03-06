@@ -24,3 +24,16 @@ window.setInterval(function(){
 	kill(swords);
 	
 }, 1000);
+function save(){
+var save = {
+    kills: kills,
+    swords: swords,
+}
+};
+localStorage.setItem("save",JSON.stringify(save));
+function load(){
+var savegame = JSON.parse(localStorage.getItem("save"));
+	if (typeof savegame.swords !== "undefined") swords = savegame.swords;
+	if (typeof savegame.kills !== "undefined") kills = savegame.kills;
+};
+
