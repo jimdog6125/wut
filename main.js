@@ -42,4 +42,28 @@ window.setInterval(function(){
 	cookieClick(magic);
 
 }, 400);
+//save and load are, you guessed it, for saving and loading.
+function save(){                                               
+var save = {
+    kills: kills,
+    swords: swords,
+    magic: magic,
+};
+localStorage.setItem("save",JSON.stringify(save));
+};
+function load(){
+
+	function prettify(input){
+    var output = Math.round(input * 1000000)/1000000;
+	return output;
+}
+	var savegame = JSON.parse(localStorage.getItem("save"));
+	
+	if (typeof savegame.kills !== "undefined") cookies = savegame.kills;
+	document.getElementById('kills').innerHTML = prettify(kills);
+	if (typeof savegame.swords !== "undefined") cookies = savegame.swords;
+	document.getElementById('swords').innerHTML = prettify(sword);
+	if (typeof savegame.magic !== "undefined") cookies = savegame.magic;
+	document.getElementById('magic').innerHTML = prettify(magic);
+}
 
