@@ -94,3 +94,21 @@ window.setInterval(function(){
 
 }, 250);
    };
+function save(){
+var save = {
+    kills: kills,
+    swords: swords,
+    magic: magic,
+    cannons: cannons,
+    prestige: prestige
+}
+localStorage.setItem("save",JSON.stringify(save));
+	
+}
+function load(){
+var savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
+if (typeof savegame.magic !== "undefined") magic = savegame.magic;
+if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
+if (typeof savegame.prestige !== "undefined") prestige = savegame.prestige;
+};
