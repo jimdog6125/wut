@@ -86,3 +86,4 @@ if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 document.getElementById('cannons').innerHTML = prettify(cannons);
 
 };
+setTimeout(save, 900000)
