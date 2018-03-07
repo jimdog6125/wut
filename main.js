@@ -35,7 +35,7 @@ function buyMagic(){
 var cannons = 0;
 
 function buyCannon(){
-    var cannonCost = Math.floor(300 * Math.pow(1.1,cannon));     //works out the cost of this cursor
+    var cannonCost = Math.floor(300 * Math.pow(1.1,cannons));     //works out the cost of this cursor
     if(kills >= cannonCost){                                   //checks that the player can afford the cursor
         cannons = cannons + 1;                                   //increases number of cursors
     	kills = kills - cannonCost;                          //removes the cookies spent
