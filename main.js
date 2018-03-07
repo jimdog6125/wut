@@ -67,7 +67,7 @@ var save = {
     swords: swords,
     magic: magic,
     cannons: cannons,
-    prestige: prestige
+    
 }
 localStorage.setItem("save",JSON.stringify(save));
 	
@@ -84,6 +84,5 @@ if (typeof savegame.magic !== "undefined") magic = savegame.magic;
 document.getElementById('magic').innerHTML = prettify(magic);
 if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 document.getElementById('cannons').innerHTML = prettify(cannons);
-if (typeof savegame.prestige !== "undefined") prestige = savegame.prestige;
-document.getElementById('prestige').innerHTML = prettify(prestige);
+
 };
