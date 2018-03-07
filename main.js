@@ -67,8 +67,10 @@ var save = {
     swords: swords,
     magic: magic,
     cannons: cannons,
-    
-}
+    swordCost: swordCost,
+    magicCost:magicCost,
+    cannonCost:cannonCost
+    }
 localStorage.setItem("save",JSON.stringify(save));
 	
 }
@@ -78,12 +80,24 @@ function prettify(input){
 	return output;
 }
 var savegame = JSON.parse(localStorage.getItem("save"));
+
 if (typeof savegame.kills !== "undefined") kills = savegame.kills;
 document.getElementById('kills').innerHTML = prettify(kills);
+
 if (typeof savegame.magic !== "undefined") magic = savegame.magic;
 document.getElementById('magic').innerHTML = prettify(magic);
+
 if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 document.getElementById('cannons').innerHTML = prettify(cannons);
+	
+if (typeof savegame.swordCost !== "undefined") swordCost = savegame.swordCost;
+document.getElementById('swordCost').innerHTML = prettify(swordCost);
+
+if (typeof savegame.magicCost !== "undefined") magicCost = savegame.magicCost;
+document.getElementById('magicCost').innerHTML = prettify(magicCost);
+
+if (typeof savegame.cannonCost !== "undefined") cannonCost = savegame.cannonCost;
+document.getElementById('cannonCost').innerHTML = prettify(cannonCost);
 
 };
 //Autosave
