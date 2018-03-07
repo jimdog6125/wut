@@ -39,7 +39,7 @@ function buyCannon(){
     if(kills >= cannonCost){                                   //checks that the player can afford the cursor
         cannons = cannons + 1;                                   //increases number of cursors
     	kills = kills - cannonCost;                          //removes the cookies spent
-        document.getElementById('cannon').innerHTML = cannons;  //updates the number of cursors for the user
+        document.getElementById('cannons').innerHTML = cannons;  //updates the number of cursors for the user
         document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
     };
     var nextCost = Math.floor(300 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
