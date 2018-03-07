@@ -35,14 +35,14 @@ function buyMagic(){
 var cannons = 0;
 
 function buyCannon(){
-    var cannonCost = Math.floor(300 * Math.pow(1.1,cannons));     //works out the cost of this cursor
+    var cannonCost = Math.floor(500 * Math.pow(1.1,cannons));     //works out the cost of this cursor
     if(kills >= cannonCost){                                   //checks that the player can afford the cursor
         cannons = cannons + 1;                                   //increases number of cursors
     	kills = kills - cannonCost;                          //removes the cookies spent
         document.getElementById('cannons').innerHTML = cannons;  //updates the number of cursors for the user
         document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(300 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
+    var nextCost = Math.floor(500 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
     document.getElementById('cannonCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 window.setInterval(function(){
