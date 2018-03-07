@@ -60,3 +60,37 @@ window.setInterval(function(){
 	kill(cannons);
 
 }, 500);
+
+var prestige = 0;
+document.getElementById("prestige").innerHTML = prestige;
+function buyPrestige(){
+    var prestigeCost = 10000000;
+    if(kills >= prestigeCost){                                   
+        prestige = prestige + 1;                                  
+    	kills = 0;
+      swords = 0;
+      magic = 0;
+      cannons = 0;
+        document.getElementById('swords').innerHTML = swords;
+        document.getElementById('magic').innerHTML = magic;
+        document.getElementById('cannons').innerHTML = cannons;  
+        document.getElementById('kills').innerHTML = kills;
+ };    
+   };
+   if (prestige = 1){
+   window.setInterval(function(){
+	
+	kill(swords);
+	
+}, 1000);
+window.setInterval(function(){
+	
+	kill(magic);
+
+}, 500);
+window.setInterval(function(){
+	
+	kill(cannons);
+
+}, 250);
+   };
