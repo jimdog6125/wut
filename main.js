@@ -45,6 +45,20 @@ function buyCannon(){
     var nextCost = Math.floor(500 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
     document.getElementById('cannonCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
+var oilTowers = 0;
+
+function buyOilTower(){
+    var oilTowerCost = Math.floor(5000 * Math.pow(1.1,oilTowers));     //works out the cost of this cursor
+    if(kills >= oilTowerCost){                                   //checks that the player can afford the cursor
+        oilTowers = oilTowers + 1;                                   //increases number of cursors
+    	kills = kills - cannonCost;                          //removes the cookies spent
+        document.getElementById('oilTowers').innerHTML = cannons;  //updates the number of cursors for the user
+        document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(5000 * Math.pow(1.1,oilTowers));       //works out the cost of the next cursor
+    document.getElementById('oilTowerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
 window.setInterval(function(){
 	
 	kill(swords);
@@ -60,36 +74,24 @@ window.setInterval(function(){
 	kill(cannons);
 
 }, 500);
-
-function save(){
-var save = {
-    kills: kills,
-    swords: swords,
-    magic: magic,
-    cannons: cannons,
-    
-    }
-localStorage.setItem("save",JSON.stringify(save));
+window.setInterval(function(){
 	
+	kill(oilTowers);
+
+}, 100);
+
+var game = {
+kills: kills,
+swords: swords,
+magic: magic,
+cannons: cannons,
+oilTowers: oilTowers
 }
-function load(){
-function prettify(input){
-    var output = Math.round(input * 1000000)/1000000;
-	return output;
-}
-var savegame = JSON.parse(localStorage.getItem("save"));
 
-if (typeof savegame.kills !== "undefined") kills = savegame.kills;
-document.getElementById('kills').innerHTML = prettify(kills);
+var save = localStorage.setItem('saveName', game);
 
-if (typeof savegame.magic !== "undefined") magic = savegame.magic;
-document.getElementById('magic').innerHTML = prettify(magic);
-
-if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
-document.getElementById('cannons').innerHTML = prettify(cannons);
-	
-
-};
+var load = localstorage.getItem('saveName');
+if (load) game = load;
 //Autosave
   var saveVar;
 
@@ -109,3 +111,11 @@ function autoLoadFunc() {
 }
 autoLoadFunc();
 
+var lastUpdate = Date.now()
+setInterval(function() {
+    let currentUpdate = Date.now()
+    let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
+    currency += resourcesGainedPerSecond * delta
+
+   lastUpdate = currentUpdate
+}, 100)
