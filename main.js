@@ -36,9 +36,9 @@ window.setInterval(function(){
 	
 	kill(swords);
 	
-}, 1000);
+}, 2000);
 window.setInterval(function(){
 	
 	kill(magic);
 
-}, 400);
+}, 1000);
