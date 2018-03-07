@@ -51,8 +51,8 @@ function buyOilTower(){
     var oilTowerCost = Math.floor(5000 * Math.pow(1.1,oilTowers));     //works out the cost of this cursor
     if(kills >= oilTowerCost){                                   //checks that the player can afford the cursor
         oilTowers = oilTowers + 1;                                   //increases number of cursors
-    	kills = kills - cannonCost;                          //removes the cookies spent
-        document.getElementById('oilTowers').innerHTML = cannons;  //updates the number of cursors for the user
+    	kills = kills - oilTowerCost;                          //removes the cookies spent
+        document.getElementById('oilTowers').innerHTML = oilTowers;  //updates the number of cursors for the user
         document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
     };
     var nextCost = Math.floor(5000 * Math.pow(1.1,oilTowers));       //works out the cost of the next cursor
