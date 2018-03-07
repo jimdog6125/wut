@@ -86,4 +86,22 @@ if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 document.getElementById('cannons').innerHTML = prettify(cannons);
 
 };
-setTimeout(save, 900000)
+//Autosave
+  var saveVar;
+
+ function autoSaveFunc() {
+ saveVar = setInterval(save, 10000); //Autosave every 10 second
+
+  }
+  autoSaveFunc();
+
+
+ //AutoLoad
+  var loadVar;
+
+function autoLoadFunc() {
+ loadVar = setTimeout(load, 1000); //autoload
+
+}
+autoLoadFunc();
+
