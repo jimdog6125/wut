@@ -61,39 +61,6 @@ window.setInterval(function(){
 
 }, 500);
 
-var prestige = 0;
-document.getElementById("prestige").innerHTML = prestige;
-function buyPrestige(){
-    var prestigeCost = 10000000;
-    if(kills >= prestigeCost){                                   
-        prestige = prestige + 1;                                  
-    	kills = 0;
-      swords = 0;
-      magic = 0;
-      cannons = 0;
-        document.getElementById('swords').innerHTML = swords;
-        document.getElementById('magic').innerHTML = magic;
-        document.getElementById('cannons').innerHTML = cannons;  
-        document.getElementById('kills').innerHTML = kills;
- };    
-   };
-   if (prestige = 1){
-   window.setInterval(function(){
-	
-	kill(swords);
-	
-}, 1000);
-window.setInterval(function(){
-	
-	kill(magic);
-
-}, 500);
-window.setInterval(function(){
-	
-	kill(cannons);
-
-}, 250);
-   };
 function save(){
 var save = {
     kills: kills,
@@ -106,9 +73,17 @@ localStorage.setItem("save",JSON.stringify(save));
 	
 }
 function load(){
+function prettify(input){
+    var output = Math.round(input * 1000000)/1000000;
+	return output;
+}
 var savegame = JSON.parse(localStorage.getItem("save"));
-if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
+if (typeof savegame.kills !== "undefined") kills = savegame.kills;
+document.getElementById('kills').innerHTML = prettify(kills);
 if (typeof savegame.magic !== "undefined") magic = savegame.magic;
+document.getElementById('magic').innerHTML = prettify(magic);
 if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
+document.getElementById('cannons').innerHTML = prettify(cannons);
 if (typeof savegame.prestige !== "undefined") prestige = savegame.prestige;
+document.getElementById('prestige').innerHTML = prettify(prestige);
 };
