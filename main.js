@@ -1,13 +1,13 @@
 var kills = 0;
 
-function cookieClick(number){
+function kill(number){
     kills = kills + number;
     document.getElementById("kills").innerHTML = kills;
 };
 
 var swords = 0;
 
-function buyCursor(){
+function buySword(){
     var swordCost = Math.floor(10 * Math.pow(1.1,swords));     //works out the cost of this cursor
     if(kills >= swordCost){                                   //checks that the player can afford the cursor
         swords = swords + 1;                                   //increases number of cursors
