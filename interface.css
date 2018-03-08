@@ -2,7 +2,7 @@ body{
     text-align: center;
     border: 5px solid green;
 }
-button {
+.button {
   padding: 15px;
   border: 1px solid grey;
   border-radius: 3px;
