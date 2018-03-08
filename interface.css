@@ -2,27 +2,18 @@ body{
     text-align: center;
     border: 5px solid green;
 }
-.button{
-    display:inline-block;
-    color ;
-    border:1px solid #CCC;
-    background: grey;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    cursor:pointer;
-    vertical-align:middle;
-    max-width: 100px;
-    padding: 5px;
-    text-align: center;
-}
 button {
-    display:inline-block;
-    color:#444;
-    border:1px solid #CCC;
-    background: grey;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    cursor:pointer;
-    vertical-align:middle;
-    max-width: 100px;
-    padding: 5px;
-    text-align: center;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: light grey;
+  color: white;
+  transition-duration: 0.12s;
+}
+
+.button:hover {
+  background-color: grey;
+  color: white;
 }
