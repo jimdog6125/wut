@@ -1,121 +1,150 @@
-var kills = 0;
+var A = 0;
 
-function kill(number){
-    kills = kills + number;
-    document.getElementById("kills").innerHTML = kills;
+function a(number){
+    A = A + number;
+    document.getElementById("A").innerHTML = A;
 };
 
-var swords = 0;
+var B = 0;
 
-function buySword(){
-    var swordCost = Math.floor(10 * Math.pow(1.1,swords));     //works out the cost of this cursor
-    if(kills >= swordCost){                                   //checks that the player can afford the cursor
-        swords = swords + 1;                                   //increases number of cursors
+function buyB(){
+    var BCost = Math.floor(10 * Math.pow(1.1,A));     //works out the cost of this cursor
+    if(A >= BCost){                                   //checks that the player can afford the cursor
+        B = B + 1;                                   //increases number of cursors
     	kills = kills - swordCost;                          //removes the cookies spent
-        document.getElementById('swords').innerHTML = swords;  //updates the number of cursors for the user
-        document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
+        document.getElementById('A').innerHTML = A;  //updates the number of cursors for the user
+        document.getElementById('B').innerHTML = B;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,swords));       //works out the cost of the next cursor
-    document.getElementById('swordCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var nextCost = Math.floor(10 * Math.pow(1.1,A));       //works out the cost of the next cursor
+    document.getElementById('BCost').innerHTML = nextCost ;  //updates the cursor cost for the user
 };
+function b(number){
+ B = B + number;
+ document.getElementById("B").innerHTML = B;
+}
 
-var magic = 0;
+var C = 0;
 
-function buyMagic(){
-    var magicCost = Math.floor(100 * Math.pow(1.1,magic));     //works out the cost of this cursor
-    if(kills >= magicCost){                                   //checks that the player can afford the cursor
-        magic = magic + 1;                                   //increases number of cursors
-    	kills = kills - magicCost;                          //removes the cookies spent
-        document.getElementById('magic').innerHTML = magic;  //updates the number of cursors for the user
-        document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
+function buyC(){
+    var CCost = Math.floor(10 * Math.pow(1.1,B));     //works out the cost of this cursor
+    if(B >= CCost){                                   //checks that the player can afford the cursor
+        C = C + 1;                                   //increases number of cursors
+    	C = C - magicCost;                          //removes the cookies spent
+        document.getElementById('C').innerHTML = C;  //updates the number of cursors for the user
+        document.getElementById('B').innerHTML = B;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(100 * Math.pow(1.1,magic));       //works out the cost of the next cursor
+    var nextCost = Math.floor(100 * Math.pow(1.1,B));       //works out the cost of the next cursor
     document.getElementById('magicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
-var cannons = 0;
+function c(number){
+ C = C + number;
+ document.getElementById("C").innerHTML = C;
+}
 
-function buyCannon(){
-    var cannonCost = Math.floor(500 * Math.pow(1.1,cannons));     //works out the cost of this cursor
-    if(kills >= cannonCost){                                   //checks that the player can afford the cursor
-        cannons = cannons + 1;                                   //increases number of cursors
-    	kills = kills - cannonCost;                          //removes the cookies spent
-        document.getElementById('cannons').innerHTML = cannons;  //updates the number of cursors for the user
-        document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
+var D = 0;
+
+function buyD(){
+    var DCost = Math.floor(10 * Math.pow(1.1,));     //works out the cost of this cursor
+    if(C >= DCost){                                   //checks that the player can afford the cursor
+        D = D + 1;                                   //increases number of cursors
+    	C = C - DCost;                          //removes the cookies spent
+        document.getElementById('D').innerHTML = D;  //updates the number of cursors for the user
+        document.getElementById('C').innerHTML = C;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(500 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
-    document.getElementById('cannonCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var nextCost = Math.floor(500 * Math.pow(1.1,C));       //works out the cost of the next cursor
+    document.getElementById('DCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
-var oilTowers = 0;
+function d(number){
+ D = D + number;
+ document.getElementById("D").innerHTML = D;
+}
 
-function buyOilTower(){
-    var oilTowerCost = Math.floor(5000 * Math.pow(1.1,oilTowers));     //works out the cost of this cursor
-    if(kills >= oilTowerCost){                                   //checks that the player can afford the cursor
-        oilTowers = oilTowers + 1;                                   //increases number of cursors
-    	kills = kills - oilTowerCost;                          //removes the cookies spent
-        document.getElementById('oilTowers').innerHTML = oilTowers;  //updates the number of cursors for the user
-        document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
+var E = 0;
+
+function buyE(){
+    var ECost = Math.floor(5000 * Math.pow(1.1,D));     //works out the cost of this cursor
+    if(D >= ECost){                                   //checks that the player can afford the cursor
+        E = E + 1;                                   //increases number of cursors
+    	D = D - ECost;                          //removes the cookies spent
+        document.getElementById('E').innerHTML = E;  //updates the number of cursors for the user
+        document.getElementById('D').innerHTML = D;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(5000 * Math.pow(1.1,oilTowers));       //works out the cost of the next cursor
-    document.getElementById('oilTowerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var nextCost = Math.floor(10 * Math.pow(1.1,D));       //works out the cost of the next cursor
+    document.getElementById('ECost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+
+ones = 0;
+function buyOne(){
+    var oneCost = Math.floor(10 * Math.pow(1.1,B));     //works out the cost of this cursor
+    if(B >= oneCost){                                   //checks that the player can afford the cursor
+        ones = ones + 1;                                   //increases number of cursors
+    	B = B - oneCost;                          //removes the cookies spent
+        document.getElementById('ones').innerHTML = ones;  //updates the number of cursors for the user
+        document.getElementById('B').innerHTML = B;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,B));       //works out the cost of the next cursor
+    document.getElementById('oneCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+twos = 0;
+function buyTwo(){
+    var twoCost = Math.floor(10 * Math.pow(1.1,C));     //works out the cost of this cursor
+    if(C >= twoCost){                                   //checks that the player can afford the cursor
+        twos = twos + 1;                                   //increases number of cursors
+    	C = C - twoCost;                          //removes the cookies spent
+        document.getElementById('twos').innerHTML = twos;  //updates the number of cursors for the user
+        document.getElementById('C').innerHTML = C;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,C));       //works out the cost of the next cursor
+    document.getElementById('twoCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+threes = 0;
+function buyThree(){
+    var threeCost = Math.floor(10 * Math.pow(1.1,D));     //works out the cost of this cursor
+    if(D >= threeCost){                                   //checks that the player can afford the cursor
+        threes = threes + 1;                                   //increases number of cursors
+    	D = D - threeCost;                          //removes the cookies spent
+        document.getElementById('threes').innerHTML = threes;  //updates the number of cursors for the user
+        document.getElementById('D').innerHTML = D;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,D));       //works out the cost of the next cursor
+    document.getElementById('threeCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+fours = 0;
+function buyFour(){
+    var fourCost = Math.floor(10 * Math.pow(1.1,E));     //works out the cost of this cursor
+    if(E >= fourCost){                                   //checks that the player can afford the cursor
+        fours = fours + 1;                                   //increases number of cursors
+    	E = E - fourCost;                          //removes the cookies spent
+        document.getElementById('fours').innerHTML = fours;  //updates the number of cursors for the user
+        document.getElementById('E').innerHTML = E;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,E));       //works out the cost of the next cursor
+    document.getElementById('fourCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
 window.setInterval(function(){
 	
-	kill(swords);
+	a(ones);
 	
-}, 2000);
+}, 1000);
 window.setInterval(function(){
 	
-	kill(magic);
+	b(twos);
 
 }, 1000);
 window.setInterval(function(){
 	
-	kill(cannons);
+	c(threes);
 
-}, 500);
+}, 1000);
 window.setInterval(function(){
 	
-	kill(oilTowers);
+	d(fours);
 
-}, 100);
-
-var game = {
-kills: kills,
-swords: swords,
-magic: magic,
-cannons: cannons,
-oilTowers: oilTowers
-}
-
-var save = localStorage.setItem('saveName', game);
-
-var load = localstorage.getItem('saveName');
-if (load) game = load;
-//Autosave
-  var saveVar;
-
- function autoSaveFunc() {
- saveVar = setInterval(save, 10000); //Autosave every 10 second
-
-  }
-  autoSaveFunc();
+}, 1000);
 
 
- //AutoLoad
-  var loadVar;
-
-function autoLoadFunc() {
- loadVar = setTimeout(load, 1000); //autoload
-
-}
-autoLoadFunc();
-
-var lastUpdate = Date.now()
-setInterval(function() {
-    let currentUpdate = Date.now()
-    let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
-    currency += resourcesGainedPerSecond * delta
-
-   lastUpdate = currentUpdate
-}, 100)
