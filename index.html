@@ -9,10 +9,23 @@
     </style>
 </head>
 <body>
-
+    <div> 
+        <span> <p>Wins:</p> <p id="wins">0</p>
+    </div>
 <canvas id="myCanvas" width="512" height="512"></canvas>
 
 <script>
+var wins = 0; 
+function save(){
+var save = {
+    wins: wins,
+}
+    localStorage.setItem('save', JSON.stringify(save));
+    }
+function load(){
+    var savegame = JSON.parse(localStorage.getItem("save"));    
+    document.getElementById("wins").innerHTML = wins;
+}
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
@@ -34,9 +47,9 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
 var lives = 3;
-    var wins = 0;
+    
 
-var bricks = [];
+    var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
     for(r=0; r<brickRowCount; r++) {
@@ -81,6 +94,7 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATS!");
+                        save();
                         document.location.reload();
                     }
                 }
@@ -179,6 +193,22 @@ function draw() {
 }
 
 draw();
+    
+    function autoSaveFunc() {
+ saveVar = setInterval(save, 10000); //Autosave every 10 second
+
+  }
+  autoSaveFunc();
+
+
+ //AutoLoad
+  var loadVar;
+
+function autoLoadFunc() {
+ loadVar = setTimeout(load, 1000); //autoload
+
+}
+autoLoadFunc();
 </script>
 
 </body>
