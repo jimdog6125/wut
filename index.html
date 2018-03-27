@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
+    <title>Single Pong Tournaments</title>
     <style>
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
@@ -10,22 +10,13 @@
 </head>
 <body>
     <div> 
-        <span> <p>Wins:</p> <p id="wins">0</p>
+       
     </div>
 <canvas id="myCanvas" width="512" height="512"></canvas>
 
 <script>
-var wins = 0; 
-function save(){
-var save = {
-    wins: wins,
-}
-    localStorage.setItem('save', JSON.stringify(save));
-    }
-function load(){
-    var savegame = JSON.parse(localStorage.getItem("save"));    
-    document.getElementById("wins").innerHTML = wins;
-}
+
+    
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
@@ -38,8 +29,8 @@ var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 10;
+var brickRowCount = prompt("Type A Number 1-15 for Rows of Bricks");
+var brickColumnCount = prompt("Type A Number 1-20 for Collumns of bricks");
 var brickWidth = 80;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -94,8 +85,7 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATS!");
-                        wins = wins + 1;
-                        save();
+                       
                         document.location.reload();
                     }
                 }
@@ -196,13 +186,7 @@ function draw() {
 draw();
     
     
-  var loadVar;
-
-function autoLoadFunc() {
- loadVar = setTimeout(load, 1000); //autoload
-
-}
-autoLoadFunc();
+ 
 </script>
 
 </body>
