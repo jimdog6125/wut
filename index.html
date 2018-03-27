@@ -38,7 +38,7 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
 var lives = 3;
-    
+var speed = prompt(" How Fast Would You Like The Ball To Go 1-10? (1 highest 10 lowest)")
 
     var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -182,7 +182,7 @@ function draw() {
     y += dy;
   }
 
-setInterval(draw, 1);
+setInterval(draw, 100);
     
     
  
