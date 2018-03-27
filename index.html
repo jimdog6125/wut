@@ -33,7 +33,7 @@ var brickRowCount = prompt("Type A Number 1-15 for Number of Bricks in a Row ");
 var brickColumnCount = prompt("Type A Number 1-10 for Number of Bricks in a Collumn");
 var brickWidth = 50;
 var brickHeight = 20;
-var brickPadding = 10;
+var brickPadding = 15;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
@@ -182,7 +182,7 @@ function draw() {
     y += dy;
   }
 
-setInterval(draw, 100);
+setInterval(draw, speed);
     
     
  
