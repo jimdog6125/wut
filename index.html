@@ -94,6 +94,7 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATS!");
+                        wins = wins + 1;
                         save();
                         document.location.reload();
                     }
@@ -194,14 +195,7 @@ function draw() {
 
 draw();
     
-    function autoSaveFunc() {
- saveVar = setInterval(save, 10000); //Autosave every 10 second
-
-  }
-  autoSaveFunc();
-
-
- //AutoLoad
+    
   var loadVar;
 
 function autoLoadFunc() {
